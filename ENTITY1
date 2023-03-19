@@ -1,0 +1,38 @@
+repeat
+Wait(math.random(10,50))
+---====== Define spawner ======---
+
+local Spawner = loadstring(game:HttpGet("https://raw.githubusercontent.com/RegularVynixu/Utilities/main/Doors/Entity%20Spawner/Source.lua"))()
+
+---====== Create entity ======---
+
+local entity = Spawner.createEntity({
+    CustomName = "GushMoving",
+    Model = "rbxassetid://12695773938", -- Can be GitHub file or rbxassetid
+    Speed = 200,
+    DelayTime = 2,
+    HeightOffset = 0,
+    CanKill = true,
+    KillRange = 50,
+    SpawnInFront = false,
+    ShatterLights = true,
+    FlickerLights = {
+        Enabled = true,
+        Duration = 3.5
+    },
+    Cycles = {
+        Min = 1,
+        Max = 2,
+        Delay = 0.2
+    },
+    CamShake = {
+        Enabled = false,
+        Values = {1.5, 20, 0.1, 1},
+        Range = 100
+    },
+    ResistCrucifix = false,
+    BreakCrucifix = false,
+})
+
+Spawner.runEntity(entity)
+until print(HOLA)
